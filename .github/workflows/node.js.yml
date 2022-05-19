@@ -33,6 +33,9 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    - name: npm install and test
       run: |
-        npm ci
+        npm install
         npm test
+      env:
+        CI: true
